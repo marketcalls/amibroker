@@ -1,0 +1,30 @@
+_SECTION_BEGIN("Donchian Channel");
+
+//input parameter control
+
+length = Param("Length",20,1,100,1);
+color = ParamColor("Color",colorGreen);
+
+
+
+upper = HHV(High,length);
+lower = LLV(Low,length);
+
+
+Plot(upper,"Upper",color,styleThick);
+Plot(lower,"Upper",color,styleThick);
+
+
+
+_SECTION_END();
+
+_SECTION_BEGIN("Candle with X-Axis");
+
+//Enable X-Axis
+SetChartOptions(0, chartShowArrows | chartShowDates);
+
+//Plot Candles
+Plot(Close,"Candles",colorDefault,styleCandle);
+
+
+_SECTION_END();
