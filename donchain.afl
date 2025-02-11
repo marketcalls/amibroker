@@ -5,11 +5,13 @@ _SECTION_BEGIN("Donchian Channel");
 length = Param("Length",20,1,100,1);
 color = ParamColor("Color",colorGreen);
 
-
+//Calculating Donchain Channel
 
 upper = HHV(High,length);
 lower = LLV(Low,length);
 
+
+//plotting donchain channel
 
 Plot(upper,"Upper",color,styleThick);
 Plot(lower,"Upper",color,styleThick);
